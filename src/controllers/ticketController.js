@@ -11,7 +11,7 @@ async function crearTicket(req, res) {
 
 async function listarTickets(req, res) {
   try {
-    const tickets = await ticketService.listarTickets();
+    const tickets = await ticketService.listarTickets(req.query);
     res.json(tickets);
   } catch (error) {
     res.status(500).json({ message: error.message });
